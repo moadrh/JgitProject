@@ -24,21 +24,6 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JgitAllCommandsTest {
-//	String fileToAdd;
-//	JgitAllCommands jgit;
-//	String fileToCreate;
-//	Shared shared;
-//	String commitMessage;
-
-//	@BeforeClass
-//	public static void initializeVariables() {
-//		final String fileToAdd = "";
-//		String fileToCreate = "src/main/java/com/asa/hicp/classes/Personne.java";
-//		JgitAllCommands jgit = new JgitAllCommands();
-//		Shared shared = new Shared();
-//		String commitMessage = "";
-//	}
-
 	private JgitAllCommands jgit = new JgitAllCommands();
 	private static Shared shared = new Shared();
 	private static String fileToAdd = "";
@@ -47,7 +32,7 @@ public class JgitAllCommandsTest {
 	@Test
 	public void testaCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
-		String fileToCreate = "testi.txt";
+		String fileToCreate = "myTest.txt";
 		Git gitt = Git.open(shared.localPath);
 		jgit.createFile(fileToCreate, gitt);
 
@@ -166,7 +151,9 @@ public class JgitAllCommandsTest {
 					RevCommit commit = walk.parseCommit(branch.getObjectId());
 					if (youngestCommit == null || commit.getAuthorIdent().getWhen()
 							.compareTo(youngestCommit.getAuthorIdent().getWhen()) > 0) {
-						youngestCommit = commit;
+						if (branch.getName().contains("remotes")) {
+							youngestCommit = commit;
+						}
 						if (youngestCommit.getFullMessage().equals(commitMessage)) {
 							condition = true;
 							System.out.println("yyyyyy " + youngestCommit.getFullMessage());

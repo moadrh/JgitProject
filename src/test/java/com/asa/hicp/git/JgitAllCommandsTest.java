@@ -22,7 +22,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-@FixMethodOrder(MethodSorters.JVM)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class JgitAllCommandsTest {
 //	String fileToAdd;
 //	JgitAllCommands jgit;
@@ -39,15 +39,15 @@ public class JgitAllCommandsTest {
 //		String commitMessage = "";
 //	}
 
-	private static JgitAllCommands jgit = new JgitAllCommands();
+	private JgitAllCommands jgit = new JgitAllCommands();
 	private static Shared shared = new Shared();
 	private static String fileToAdd = "";
 	private static String commitMessage = "";
 
 	@Test
-	public void tesCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
+	public void testaCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
-		String fileToCreate = "src/main/java/com/asa/hicp/classes/Personne.java";
+		String fileToCreate = "testt1.txt";
 		Git gitt = Git.open(shared.localPath);
 		jgit.createFile(fileToCreate, gitt);
 
@@ -67,7 +67,7 @@ public class JgitAllCommandsTest {
 	}
 
 	@Test
-	public void testAddFile() throws IOException, NoWorkTreeException, GitAPIException {
+	public void testbAddFile() throws IOException, NoWorkTreeException, GitAPIException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
 				Status status = git.status().call();
@@ -88,7 +88,7 @@ public class JgitAllCommandsTest {
 	}
 
 	@Test
-	public void testAddFile2() throws IOException, NoWorkTreeException, GitAPIException {
+	public void testbAddFile2() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
@@ -112,7 +112,7 @@ public class JgitAllCommandsTest {
 	}
 
 	@Test
-	public void testAddAll() throws IOException, NoWorkTreeException, GitAPIException {
+	public void testcAddAll() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
 		jgit.addAll(shared.localPath);
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
@@ -127,7 +127,7 @@ public class JgitAllCommandsTest {
 	}
 
 	@Test
-	public void testCommit() throws IOException, NoWorkTreeException, GitAPIException {
+	public void testdCommit() throws IOException, NoWorkTreeException, GitAPIException {
 		Date date = new Date();
 		int size = 0;
 		Boolean condition = false;
@@ -145,7 +145,7 @@ public class JgitAllCommandsTest {
 	}
 
 //	@Test
-	public void testPush() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
+	public void test6Push() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
 				jgit.push("moad_rehhali", "g@l@cticos123", shared.localPath, shared.uri);
@@ -154,7 +154,7 @@ public class JgitAllCommandsTest {
 	}
 
 //	@Test
-	public void testPush2() throws IOException, GitAPIException {
+	public void test7Push() throws IOException, GitAPIException {
 		boolean condition = false;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {

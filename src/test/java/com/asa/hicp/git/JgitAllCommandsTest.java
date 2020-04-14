@@ -30,10 +30,10 @@ public class JgitAllCommandsTest {
 	private static String fileToAdd = "";
 	private static String commitMessage = "";
 
-	@Test
+//	@Test
 	public void tesCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
-		String fileToCreate = "src/main/java/com/asa/hicp/classes/Persoone.java";
+		String fileToCreate = "src/main/java/com/asa/hicp/classes/Personne.java";
 		Git gitt = Git.open(shared.localPath);
 		jgit.createFile(fileToCreate, gitt);
 
@@ -52,7 +52,7 @@ public class JgitAllCommandsTest {
 		assertEquals(1, count);
 	}
 
-	@Test
+//	@Test
 	public void testAddFile() throws IOException, NoWorkTreeException, GitAPIException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
@@ -73,7 +73,7 @@ public class JgitAllCommandsTest {
 		}
 	}
 
-	@Test
+//	@Test
 	public void testAddFile2() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
@@ -112,7 +112,7 @@ public class JgitAllCommandsTest {
 		assertEquals(0, count);
 	}
 
-	@Test
+//	@Test
 	public void testCommit() throws IOException, NoWorkTreeException, GitAPIException {
 		Date date = new Date();
 		int size = 0;

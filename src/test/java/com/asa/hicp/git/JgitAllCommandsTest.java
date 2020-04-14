@@ -97,7 +97,7 @@ public class JgitAllCommandsTest {
 		assertEquals(1, count);
 	}
 
-	@Test
+//	@Test
 	public void testAddAll() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
 		jgit.addAll(shared.localPath);
@@ -120,7 +120,7 @@ public class JgitAllCommandsTest {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
 				Status status = git.status().call();
-				RevCommit commit = jgit.commit("test commit5", shared.localPath);
+				RevCommit commit = jgit.commit("test commit", shared.localPath);
 				commitMessage = commit.getFullMessage();
 			}
 		}
@@ -130,7 +130,7 @@ public class JgitAllCommandsTest {
 		assertTrue(condition);
 	}
 
-//	@Test
+	@Test
 	public void testPush() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
@@ -139,7 +139,7 @@ public class JgitAllCommandsTest {
 		}
 	}
 
-//	@Test
+	@Test
 	public void testPush2() throws IOException, GitAPIException {
 		boolean condition = false;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {

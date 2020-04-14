@@ -24,8 +24,22 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.JVM)
 public class JgitAllCommandsTest {
+//	String fileToAdd;
+//	JgitAllCommands jgit;
+//	String fileToCreate;
+//	Shared shared;
+//	String commitMessage;
 
-	private JgitAllCommands jgit = new JgitAllCommands();
+//	@BeforeClass
+//	public static void initializeVariables() {
+//		final String fileToAdd = "";
+//		String fileToCreate = "src/main/java/com/asa/hicp/classes/Personne.java";
+//		JgitAllCommands jgit = new JgitAllCommands();
+//		Shared shared = new Shared();
+//		String commitMessage = "";
+//	}
+
+	private static JgitAllCommands jgit = new JgitAllCommands();
 	private static Shared shared = new Shared();
 	private static String fileToAdd = "";
 	private static String commitMessage = "";

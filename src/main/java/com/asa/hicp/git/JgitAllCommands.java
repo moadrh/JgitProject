@@ -32,9 +32,9 @@ public class JgitAllCommands {
 	public void createFile(String nameFile, Git git) throws IOException {
 		git.getRepository().getDirectory();
 		File myFile = new File(git.getRepository().getDirectory().getParent(), nameFile);
-		if (!myFile.createNewFile()) {
-			throw new IOException("Could not create file " + myFile);
-		}
+//		if (!myFile.createNewFile()) {
+//			throw new IOException("Could not create file " + myFile);
+//		}
 	}
 
 	public void addFile(String nameFile, File localPath)

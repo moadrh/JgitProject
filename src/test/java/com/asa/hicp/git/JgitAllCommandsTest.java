@@ -32,7 +32,7 @@ public class JgitAllCommandsTest {
 	@Test
 	public void testaCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
-		String fileToCreate = "myTest.txt";
+		String fileToCreate = "myTest2.txt";
 		Git gitt = Git.open(shared.localPath);
 		jgit.createFile(fileToCreate, gitt);
 
@@ -129,7 +129,7 @@ public class JgitAllCommandsTest {
 		assertTrue(condition);
 	}
 
-	@Test
+//	@Test
 	public void testePush() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
@@ -138,7 +138,7 @@ public class JgitAllCommandsTest {
 		}
 	}
 
-	@Test
+//	@Test
 	public void testePush2() throws IOException, GitAPIException {
 		boolean condition = false;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {

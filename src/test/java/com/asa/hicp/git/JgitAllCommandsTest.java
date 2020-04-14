@@ -47,7 +47,7 @@ public class JgitAllCommandsTest {
 	@Test
 	public void testaCreateFile() throws IOException, NoWorkTreeException, GitAPIException {
 		int count = 0;
-		String fileToCreate = "testt1.txt";
+		String fileToCreate = "testi.txt";
 		Git gitt = Git.open(shared.localPath);
 		jgit.createFile(fileToCreate, gitt);
 
@@ -144,8 +144,8 @@ public class JgitAllCommandsTest {
 		assertTrue(condition);
 	}
 
-//	@Test
-	public void test6Push() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
+	@Test
+	public void testePush() throws IOException, NoWorkTreeException, GitAPIException, URISyntaxException {
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
 				jgit.push("moad_rehhali", "g@l@cticos123", shared.localPath, shared.uri);
@@ -153,8 +153,8 @@ public class JgitAllCommandsTest {
 		}
 	}
 
-//	@Test
-	public void test7Push() throws IOException, GitAPIException {
+	@Test
+	public void testePush2() throws IOException, GitAPIException {
 		boolean condition = false;
 		try (Repository repository = CookbookHelper.openJGitCookbookRepository()) {
 			try (Git git = new Git(repository)) {
@@ -162,7 +162,7 @@ public class JgitAllCommandsTest {
 				List<Ref> branches = git.branchList().setListMode(ListMode.ALL).call();
 				RevWalk walk = new RevWalk(git.getRepository());
 				for (Ref branch : branches) {
-					System.out.println(branch);
+					System.out.println(branch.getName());
 					RevCommit commit = walk.parseCommit(branch.getObjectId());
 					if (youngestCommit == null || commit.getAuthorIdent().getWhen()
 							.compareTo(youngestCommit.getAuthorIdent().getWhen()) > 0) {
